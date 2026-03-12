@@ -1,4 +1,8 @@
- function enviar() {
-            var nome = document.getElementById("campoNome").value;
-            document.getElementById("mensagem").innerText = `E um prazer ${nome}`;
+function mudarTexto() {
+            
+            var elemento = document.getElementById("textoPrincipal");
+            
+            elemento.innerText = "Voce foi Mogado!";
+
+            elemento.style.color = "#28a745";
         }
