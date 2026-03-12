@@ -1,8 +1,14 @@
-function mudarTexto() {
-            
-            var elemento = document.getElementById("textoPrincipal");
-            
-            elemento.innerText = "Voce foi Mogado!";
+function adicionarItem() {
 
-            elemento.style.color = "#28a745";
-        }
+            var input = document.getElementById("itemInput");
+            var lista = document.getElementById("minhaLista");
+}if (input.value.trim() !== "") {
+                var novoItem = document.createElement("li");
+                novoItem.innerText = input.value;
+                lista.appendChild(novoItem);
+                input.value = "";
+                input.focus();
+                
+            } else {
+                alert("Por favor, digite algo antes de adicionar!");
+            }
