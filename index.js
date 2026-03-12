@@ -1,30 +1,45 @@
 function adicionarItem() {
     const input = document.getElementById("itemInput");
     const lista = document.getElementById("listaDinamica");
-    const texto = input.value.trim();
+    const valor = input.value.trim();
 
-    if (texto !== "") {
-        const elemento = document.createElement("li");
-        elemento.className = "list-group-item d-flex justify-content-between align-items-center mt-2 shadow-sm";
+    if (valor !== "") {
+        const novoItem = document.createElement("li");
+        novoItem.className = "list-group-item d-flex align-items-center justify-content-between mt-2";
 
-        const conteudoTarefa = document.createElement("span");
-        conteudoTarefa.innerText = texto;
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "form-check-input me-3";
+
+        const span = document.createElement("span");
+        span.innerText = valor;
+        span.className = "flex-grow-1";
 
         const btnRemover = document.createElement("button");
         btnRemover.innerText = "Remover";
         btnRemover.className = "btn btn-danger btn-sm";
 
+        checkbox.addEventListener('change', function() {
+            if (checkbox.checked) {
+                span.style.textDecoration = "line-through";
+                span.style.opacity = "0.5";
+            } else {
+                span.style.textDecoration = "none";
+                span.style.opacity = "1";
+            }
+        });
+
         btnRemover.onclick = function() {
-            elementoLista.remove();
+            novoItem.remove();
         };
 
-        elemento.appendChild(conteudoTarefa);
-        elemento.appendChild(btnRemover);
-        lista.appendChild(elemento);
+        novoItem.appendChild(checkbox);
+        novoItem.appendChild(span);
+        novoItem.appendChild(btnRemover);
+        lista.appendChild(novoItem);
 
         input.value = "";
-        input.focus();
     } else {
-        alert("Por favor, digite uma tarefa!");
+        alert("Digite algo antes de adicionar!");
     }
 }
