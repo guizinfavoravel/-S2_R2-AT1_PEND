@@ -1,19 +1,30 @@
+function adicionarItem() {
+    const input = document.getElementById("itemInput");
+    const lista = document.getElementById("listaDinamica");
+    const texto = input.value.trim();
 
-        function adicionarItem() {
-            
-            const input = document.getElementById("itemInput");
-            const texto = input.value;
+    if (texto !== "") {
+        const elemento = document.createElement("li");
+        elemento.className = "list-group-item d-flex justify-content-between align-items-center mt-2 shadow-sm";
 
-            if (texto.trim() !== "") {
-                const novo = document.createElement("li");
+        const conteudoTarefa = document.createElement("span");
+        conteudoTarefa.innerText = texto;
 
-                novo.innerText = texto;
+        const btnRemover = document.createElement("button");
+        btnRemover.innerText = "Remover";
+        btnRemover.className = "btn btn-danger btn-sm";
 
-                
-                const lista = document.getElementById("listaDinamica");
-                lista.appendChild(novo);
+        btnRemover.onclick = function() {
+            elementoLista.remove();
+        };
 
-                input.value = "";
-                input.focus();
-            }
-        }
+        elemento.appendChild(conteudoTarefa);
+        elemento.appendChild(btnRemover);
+        lista.appendChild(elemento);
+
+        input.value = "";
+        input.focus();
+    } else {
+        alert("Por favor, digite uma tarefa!");
+    }
+}
