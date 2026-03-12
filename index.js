@@ -1,15 +1,19 @@
-function adicionarItem() {
 
-    var input = document.getElementById("itemInput");
-    var lista = document.getElementById("minhaLista");
-    if (input.value.trim() !== "") {
-        var novoItem = document.createElement("li");
-        novoItem.innerText = input.value;
-        lista.appendChild(novoItem);
-        input.value = "";
-        input.focus();
+        function adicionarItem() {
+            
+            const input = document.getElementById("itemInput");
+            const texto = input.value;
 
-    } else {
-        alert("Por favor, digite algo antes de adicionar!");
-    }
-}
+            if (texto.trim() !== "") {
+                const novo = document.createElement("li");
+
+                novo.innerText = texto;
+
+                
+                const lista = document.getElementById("listaDinamica");
+                lista.appendChild(novo);
+
+                input.value = "";
+                input.focus();
+            }
+        }
