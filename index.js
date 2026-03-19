@@ -14,6 +14,5 @@
                 lista.appendChild(novo);
 
                 input.value = "";
-                input.focus();
             }
         }
