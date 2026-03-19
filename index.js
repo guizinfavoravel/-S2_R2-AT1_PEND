@@ -1,3 +1,4 @@
+
 function adicionarItem() {
     const input = document.getElementById("itemInput");
     const lista = document.getElementById("listaDinamica");
@@ -29,8 +30,8 @@ function adicionarItem() {
         novoItem.appendChild(checkbox);
         
         novoItem.appendChild(span);
-        novoItem.appendChild(btnRemover);
-        lista.appendChild(novoItem);
+        novoItem.appendChild(btnRemover);//o resto adiciona a variavel dentro do novo
+        lista.appendChild(novoItem);//vai adicionar novo item dentro da lista
 
         input.value = "";
     } else {
