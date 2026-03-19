@@ -20,13 +20,6 @@ function adicionarItem() {
         btnRemover.className = "btn btn-danger btn-sm";
 
         checkbox.addEventListener('change', function() {
-            if (checkbox.checked) {
-                span.style.textDecoration = "line-through";
-                span.style.opacity = "0.5";
-            } else {
-                span.style.textDecoration = "none";
-                span.style.opacity = "1";
-            }
         });
 
         btnRemover.onclick = function() {
@@ -34,6 +27,7 @@ function adicionarItem() {
         };
 
         novoItem.appendChild(checkbox);
+        
         novoItem.appendChild(span);
         novoItem.appendChild(btnRemover);
         lista.appendChild(novoItem);
